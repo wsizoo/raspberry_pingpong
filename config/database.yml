@@ -19,11 +19,14 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
 
 development:
   <<: *default
-  database: raspberry_pingpong_development
+  database: ddacpc4ubccjh3
+  username: ibfnutsuvnkjkm
+  password: dr6LSFUfpA8L_X6BQAXdMxUkhs
+  host: ec2-184-73-254-144.compute-1.amazonaws.com
+  port: 5432
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
