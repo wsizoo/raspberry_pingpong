@@ -12,12 +12,21 @@
 
   <div class="jumbotron">
     <h1>Status</h1>
-    <% if @status == "OPEN" %>
+    <% if @data_status == "OPEN" %>
         <p><a class="btn btn-lg btn-alert alert-success" href="#" role="button">The Table is Open!</a></p>
     <% else %>
         <p><a class="btn btn-lg btn-alert alert-danger" href="#" role="button">The Table is in Use.</a></p>
     <% end %>
+    <% @data.each do |status| %>
+    <p><%= status.status %> | <%= status.date_time %></p>
+    <% end %>
   </div>
+
+  <script>
+      setTimeout(function(){
+          window.location.reload(1);
+      }, 3000);
+  </script>
 
   <footer class="footer">
     <p>&copy; Will Sizoo 2015</p>
