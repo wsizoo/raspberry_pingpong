@@ -18,7 +18,7 @@
         <p><a class="btn btn-lg btn-alert alert-danger" href="#" role="button">The Table is in Use.</a></p>
     <% end %>
     <% @data.each do |status| %>
-    <p><%= status.status %> | <%= status.date_time %></p>
+    <p><strong><%= status.status %></strong> | <em><%= status.date_time %></em></p>
     <% end %>
   </div>
 
