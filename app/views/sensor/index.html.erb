@@ -11,12 +11,19 @@
   </div>
 
   <div class="jumbotron">
-    <h1>Status</h1>
-    <% if @data_status == "OPEN" %>
-        <p><a class="btn btn-lg btn-alert alert-success" href="#" role="button">The Table is Open!</a></p>
-    <% else %>
-        <p><a class="btn btn-lg btn-alert alert-danger" href="#" role="button">The Table is in Use.</a></p>
+    <h1>Table Status<sup>*Beta</sup></h1>
+    <% @data.each do |status, i| %>
+        <% if i == 0 %>
+        <p><strong><%= status.status %></strong></p>
+        <% else %>
+        <% end %>
     <% end %>
+    <%# if @data_status == "OPEN" %>
+        <!--<p><a class="btn btn-lg btn-alert alert-success" href="#" role="button">The Table is Open!</a></p>-->
+    <%# else %>
+        <!--<p><a class="btn btn-lg btn-alert alert-danger" href="#" role="button">The Table is in Use.</a></p>-->
+    <%# end %>
+    <h2>Raw Data Feed</h2>
     <% @data.each do |status| %>
     <p><strong><%= status.status %></strong> | <em><%= status.date_time %></em></p>
     <% end %>
@@ -25,7 +32,7 @@
   <script>
       setTimeout(function(){
           window.location.reload(1);
-      }, 3000);
+      }, 2000);
   </script>
 
   <footer class="footer">
