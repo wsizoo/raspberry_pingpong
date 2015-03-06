@@ -13,6 +13,10 @@
   <div class="jumbotron">
     <h1>Table Status<sup style="font-size: 17px; top:-1.5em; color: #337ab7;">*Beta</sup></h1>
     <%= current_state(@data_status) %>
+    <h2>Raw Data Feed</h2>
+    <% @data.each do |status| %>
+    <p><strong><%= status.status %></strong> | <em><%= status.date_time %></em></p>
+    <% end %>
   </div>
 
   <script>
