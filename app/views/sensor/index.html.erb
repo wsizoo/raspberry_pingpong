@@ -11,17 +11,22 @@
   </div>
 
   <div class="jumbotron">
-    <h1>Maintenance</h1>
-    <p>The table status is currently unavailable. Check back later.</p>
-    <!--<h1>Table Status<sup style="font-size: 17px; top:-1.5em; color: #337ab7;">*Beta</sup></h1>-->
-    <%#= current_state(@data_status) %>
+    <% @online_status == 'YES' %>
+    <% if @online_status == 'NO' %>
+        <h1>Maintenance</h1>
+        <p>The table status is currently unavailable. Check back later.</p>
+    <% else %>
+        <h1>Table Status<sup style="font-size: 17px; top:-1.5em; color: #337ab7;">*Beta</sup></h1>
+        <%= current_state(@data_status) %>
+        <script>
+            setTimeout(function(){
+                window.location.reload(1);
+            }, 2000);
+        </script>
+    <% end %>
   </div>
 
-  <script>
-      setTimeout(function(){
-          window.location.reload(1);
-      }, 2000);
-  </script>
+
 
   <footer class="footer">
     <p>&copy; Will Sizoo 2015</p>
